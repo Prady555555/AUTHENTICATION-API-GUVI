@@ -10,7 +10,9 @@ API.use(EXPRESS.json());
 API.use("/auth", AuthController);
 
 API.get("/", (req, res) => {
-  res.send("Hello World");
+  res.status(200).json({
+    message: "  Welcome to Authication Api by PradeepDurai",
+  });
 });
 
 API.listen(process.env.PORT, process.env.HOSTNAME, function () {

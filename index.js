@@ -13,6 +13,8 @@ API.get("/", (req, res) => {
   res.send("Hello World");
 });
 
-API.listen(3000, "localhost", () => {
-  console.log("Server is running on port 3000");
+API.listen(process.env.PORT, process.env.HOSTNAME, function () {
+  console.log(
+    `Server started on port ${process.env.PORT} and host ${process.env.HOSTNAME}`
+  );
 });
